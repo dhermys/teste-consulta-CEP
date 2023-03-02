@@ -11,8 +11,8 @@ function compararEstados() {
     }
 }
 
-async function pesquisarCep(cep) {
-    let cepConsultado = document.getElementById(cep).value;
+async function pesquisarCep() {
+    let cepConsultado = document.getElementById('cep-origem').value;
     var validacep = /^[0-9]{8}$/;
     if (cepConsultado.trim() === "" || !validacep.test(cepConsultado)) {
         document.getElementById('resposta').innerHTML = `<h5>O formato do CEP é inválido</h5>`
@@ -31,7 +31,7 @@ async function pesquisarCep(cep) {
             if ("erro" in conteudo) {
                 document.getElementById('resposta').innerHTML = `<h5>CEP não encontrado</h5>`
             } else {
-                estados.unshift(conteudo.uf)
+                //estados.unshift(conteudo.uf)
                 
 
                 document.getElementById('resposta').innerHTML =
