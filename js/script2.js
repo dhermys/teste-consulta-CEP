@@ -22,9 +22,10 @@ const pesquisarCep = async () => {
                   <h5 class="card-title">${conteudo.cep}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Grupo: ${conteudo.logradouro}</li>
-                    <li class="list-group-item">Expectativa de vida: ${conteudo.localidade}</li>
-                    <li class="list-group-item">Temperamento: ${conteudo.uf}</li>
+                    <li class="list-group-item">Lougradouro: ${conteudo.logradouro}</li>
+                    <li class="list-group-item">Localidade: ${conteudo.localidade}</li>
+                    <li class="list-group-item">UF: ${conteudo.uf}</li>
+                    <li class="list-group-item">A TruckLog atende na sua região</li>
                 </ul>                  
                 </div>
               </div> <hr/>`
