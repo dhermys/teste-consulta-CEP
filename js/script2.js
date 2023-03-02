@@ -1,8 +1,8 @@
 const pesquisarCep = async () => {
     let cep = document.getElementById('cep').value;
-
-    if (cep.trim() === '') {
-        document.getElementById('resposta').innerHTML = `<h5>O campo CEP deve ser preenchido</h5>`
+    var validacep = /^[0-9]{8}$/;
+    if (cep.trim() === "" || !validacep.test(cep)) {
+        document.getElementById('resposta').innerHTML = `<h5>Formato do CEP inválido</h5>`
     } else {
         await fetch(`https://viacep.com.br/ws/${cep}/json/`, {
             method: 'GET',
@@ -15,7 +15,9 @@ const pesquisarCep = async () => {
             }
             return response.json();
         }).then((conteudo) => {
-            if (conteudo.length !== 0) {
+            if ("erro" in conteudo) {
+                document.getElementById('resposta').innerHTML = `<h5>CEP não encontrado</h5>`
+            } else {
                 document.getElementById('resposta').innerHTML = 
                 `<div class="card" style="width: 18rem;">                
                 <div class="card-body">
