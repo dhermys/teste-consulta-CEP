@@ -4,6 +4,7 @@ function compararEstados() {
     let ceps = ['cep-origem', 'cep-destino']
     ceps.forEach(pesquisarCep)
     console.log(estados)
+    const myTimeout = setTimeout(myGreeting, 500);
 }
 
 async function pesquisarCep(cep) {
@@ -45,3 +46,10 @@ async function pesquisarCep(cep) {
     }
 }
 
+function myGreeting() {
+  if(estados[0] != estados[1]) {
+    console.log('estados diferentes')
+  } else {
+    console.log('estados iguais')
+  }
+}
