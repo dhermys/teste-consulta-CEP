@@ -14,15 +14,16 @@
         <form class="row g-3">
             <div class="col-auto">
                 <label for="cep" class="visually-hidden">CEP</label>
-                <input type="text" class="form-control" id="cep" placeholder="CEP"/>
+                <input type="text" class="form-control" id="cep-origem" placeholder="CEP"/>
+                <input type="text" class="form-control" id="cep-destino" placeholder="CEP"/>
             </div>
             <div class="col-auto">
-                <button type="button" class="btn btn-primary mb-3" onclick="pesquisarCep()">Pesquisar</button>
+                <button type="button" class="btn btn-primary mb-3" onclick="compararEstados()">Pesquisar</button>
             </div>
         </form>
         <hr/>
         <div id="resposta"></div>
-
+        
     </div>
     
     <script src="./js/script2.js"></script>
